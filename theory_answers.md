@@ -10,12 +10,11 @@ This file contains the written responses for Part 2 (Diffusion Models) and Part 
 
 ## 1. Sinusoidal Time Embedding Formula (Plain Text)
 
-For timestep t and embedding dimension d:
+For embedding dimension d, let k = 0, 1, 2, ...
 
 ```
-emb_i(t) =
-    sin( t / 10000^(i/d) )          if i is even
-    cos( t / 10000^((i-1)/d) )      if i is odd
+emb[2k](t)   = sin( t / 10000^(2k / d) )
+emb[2k+1](t) = cos( t / 10000^(2k / d) )
 ```
 
 ---
@@ -132,7 +131,7 @@ Gradients will not be computed.
 ## 8. Breaking the Graph with detach()
 
 ```
-z = y.detach()
+z = y  # no detach
 ```
 
 This removes z from the graph; gradients cannot flow back.
