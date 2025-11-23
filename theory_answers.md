@@ -172,5 +172,3 @@ x.grad.zero_()
 ```
 
 ---
-
-# End of Theory Answers
